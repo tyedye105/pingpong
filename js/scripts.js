@@ -1,17 +1,36 @@
 var countArray = [];
 var countBy = prompt("Enter a number to count by");
 
-alert(countBy);
+
 
 var doSomething = function(countBy, countArray) {
-for (i= 0; i <= countBy; i++) {
+for (i= 0; i < countBy; i++) {
 	countArray.push( i+1);
 }
 alert(countArray);
-alert("hi");
+
+
+countArray.forEach(function(checkThree) {
+
+  if (checkThree % 3 === 0) {
+
+
+
+        countArray.splice( checkThree -1, 1,"ping");
+
+
+  }
+});
+
+
+
+
+
 };
 
 doSomething(countBy,countArray);
+
+alert(countArray);
 
 //var Something = function(limit, countBy, resultMath) {
 
