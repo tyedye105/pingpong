@@ -1,7 +1,13 @@
+// // Back End
 var doSomething = function(countBy, countArray) {
 for (i= 0; i < countBy; i++) {
 	countArray.push( i+1);
 }
+countArray.forEach(function(checkTwnty) {
+  if (checkTwnty % 20 === 0) {
+        countArray.splice( checkTwnty -1, 1,"score");
+  }
+});
 countArray.forEach(function(checkFteen) {
   if (checkFteen % 3 === 0 && checkFteen % 5 === 0) {
         countArray.splice( checkFteen -1, 1,"pingpong");
@@ -17,23 +23,20 @@ countArray.forEach(function(checkFive) {
         countArray.splice( checkFive -1, 1,"pong");
   }
 });
-
-
-
-
-
 };
 
+//Front End
+ $(document).ready(function() {
+   $("form#num-form").submit(function(event) {
+    event.preventDefault();
+    var countBy = parseInt($("input#numb-by").val());
+    var countArray = [];
+    var pongPing = doSomething(countBy,countArray);
 
+    $("#results").text(countArray);
 
-
-
-
-var countArray = [];
-var countBy = prompt("Enter a number to count by");
-doSomething(countBy,countArray);
-
-alert(countArray);
+  });
+});
 
 //var Something = function(limit, countBy, resultMath) {
 
