@@ -1,24 +1,20 @@
-var countArray = [];
-var countBy = prompt("Enter a number to count by");
-
-
-
 var doSomething = function(countBy, countArray) {
 for (i= 0; i < countBy; i++) {
 	countArray.push( i+1);
 }
-alert(countArray);
-
-
+countArray.forEach(function(checkFteen) {
+  if (checkFteen % 3 === 0 && checkFteen % 5 === 0) {
+        countArray.splice( checkFteen -1, 1,"pingpong");
+  }
+});
 countArray.forEach(function(checkThree) {
-
   if (checkThree % 3 === 0) {
-
-
-
         countArray.splice( checkThree -1, 1,"ping");
-
-
+  }
+});
+countArray.forEach(function(checkFive) {
+  if (checkFive % 5 === 0) {
+        countArray.splice( checkFive -1, 1,"pong");
   }
 });
 
@@ -28,6 +24,13 @@ countArray.forEach(function(checkThree) {
 
 };
 
+
+
+
+
+
+var countArray = [];
+var countBy = prompt("Enter a number to count by");
 doSomething(countBy,countArray);
 
 alert(countArray);
