@@ -1,7 +1,7 @@
-// // Back End
+// Back End
 var doSomething = function(countBy, countArray) {
-for (i= 0; i < countBy; i++) {
-	countArray.push( i+1);
+	for (i= 0; i < countBy; i++) {
+		countArray.push( i+1);
 }
 countArray.forEach(function(checkTwnty) {
   if (checkTwnty % 20 === 0) {
@@ -32,10 +32,8 @@ countArray.forEach(function(checkFive) {
     var countBy = parseInt($("input#numb-by").val());
     var countArray = [];
     var pongPing = doSomething(countBy,countArray);
-
-    $("#results").text(countArray);
-
-  });
+		$("#results").text(countArray);
+	});
 });
 
 //var Something = function(limit, countBy, resultMath) {
