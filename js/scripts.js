@@ -1,5 +1,5 @@
 // Back End
-var doSomething = function(countBy, countArray) {
+var countUp = function(countBy, countArray) {
 	for (i= 0; i < countBy; i++) {
 		countArray.push( i+1);
 }
@@ -31,7 +31,7 @@ countArray.forEach(function(checkFive) {
     event.preventDefault();
     var countBy = parseInt($("input#numb-by").val());
     var countArray = [];
-    var pongPing = doSomething(countBy,countArray);
+    var pongPing = countUp(countBy,countArray);
 		$("#results").text(countArray);
 	});
 });
